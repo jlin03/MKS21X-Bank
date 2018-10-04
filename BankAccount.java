@@ -3,7 +3,7 @@ public class BankAccount {
 	private int accountID;
 	private String password;
 	
-	public BankAccount(int aID, String pass, double bal) {
+	public BankAccount(double bal, int aID, String pass) {
 		accountID = aID;
 		password = pass;
 		balance = bal;
