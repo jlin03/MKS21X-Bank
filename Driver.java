@@ -11,19 +11,19 @@ public class Driver {
 		System.out.println(account1);
 		// 45829	2381.82
 		
-		testDeposit(-50);
+		System.out.println(testDeposit(-50, account1));
 		// Deposit failure
 		
-		testWithdraw(5000);
+		System.out.println(testWithdraw(5000, account1));
 		// Withdrawal failure
 		
-		testDeposit(900);
+		System.out.println(testDeposit(900, account1));
 		// Deposit success
 		
 		System.out.println(account1.getBalance());
 		// 3281.82
 		
-		testWithdraw(3000);
+		System.out.println(testWithdraw(3000, account1));
 		// Withdrawal success
 		
 		System.out.println(account1.getBalance());
@@ -31,21 +31,21 @@ public class Driver {
 		
 	}
 	
-	public static String testDeposit(double d) {
-		if(account1.deposit(d)) {
-            println("Deposit success");
+	public static String testDeposit(double d, BankAccount a) {
+		if(a.deposit(d)) {
+            return("Deposit success");
         }
 		else {
-            println("Deposit failure");
+            return("Deposit failure");
         }
 	}
 	
-	public static String testWtihdraw(double w) {
-		if(account1.withdraw(w)) {
-            println("Withdrawal success");
+	public static String testWithdraw(double w, BankAccount a) {
+		if(a.withdraw(w)) {
+            return("Withdrawal success");
         }
 		else {
-            println("Withdrawal failure");
+            return("Withdrawal failure");
         }
 	}
 	

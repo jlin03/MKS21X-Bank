@@ -10,7 +10,7 @@ public class BankAccount {
 	}
 	
 	public String toString() {
-		return(accountID + "/t" + balance);
+		return(accountID + "\t" + balance);
 	}
 	
 	
@@ -19,7 +19,7 @@ public class BankAccount {
 	}
 	
 	public int getID() {
-		return balance;
+		return accountID;
 	}
 	
 	public double getBalance() {
