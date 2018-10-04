@@ -37,7 +37,7 @@ public class BankAccount {
 	}
 	
 	public boolean withdraw(double w) {
-		if(w > balance) {
+		if(w > balance || w < 0) {
 			return false;
 		}
 		else {
@@ -45,5 +45,26 @@ public class BankAccount {
 			return true;
 		}
 	}
+
+	private boolean authenticate(String pass) {
+		return(pass == this.password);
+	}
+	
+	public boolean transferTo(BankAccount other, double amount, String pass) {
+		if(this.authenticate(pass) && this.withdraw(amount)) {
+			other.deposit(amount);
+			return true;
+		}
+		else {
+			return false;
+		}
+
+
+	}
+
+
+
+
+
 	
 }
